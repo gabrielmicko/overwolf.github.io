@@ -1,0 +1,14 @@
+---
+id: $path
+title: "$name status"
+hide_title: true
+sidebar_label: "$name"
+showLastUpdateAuthor: false
+showLastUpdateTime: false
+---
+
+$tags
+
+import EventsData from '@site/src/components/game-events-status/EventsData';
+
+<EventsData specificGame={true} gameID={$id} docsPath={'/api/games/events/$path'} />

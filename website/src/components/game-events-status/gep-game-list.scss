@@ -1,0 +1,228 @@
+
+.gep-game {
+
+  .search-game {
+    position: relative;
+    margin: 0 0 24px;
+    height: 40px;
+    color: #8a9ea1;
+    background: #D3CFE5;
+
+    &:hover {
+
+      .search-input {
+        background: var(--card-hover);
+      }
+
+      .search-submit {
+        color: #D3EAED;
+      }
+
+    }
+
+    .search-input {
+      display: block;
+      width: 100%;
+      line-height: 40px;
+      padding-left: 45px;
+      height: 40px;
+      font-weight: 300;
+      transition: all .15s ease;
+      background-color: #fff;
+
+      &:hover {
+        &::placeholder {
+          color: #ccc;
+        }
+      }
+
+      &:focus {
+        background: var(--card-hover);
+
+        ~.search-submit {
+          color: #D3EAED;
+        }
+      }
+
+      &::-webkit-search-cancel-button {
+        display: none;
+      }
+    }
+
+    .search-submit {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      padding: 0;
+      transition: all .15s ease;
+      min-width: auto;
+      background: transparent;
+      color: var(--color-500);
+
+      svg {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+  }
+
+  .game-events-info {
+    display: flex;
+    gap: 24px;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
+
+    .game-data {
+      display: block;
+      width: 50%;
+
+      @media (max-width: 600px) {
+        width: 100%;
+      }
+
+      h4 {
+        margin: 0;
+        padding: 15px;
+        background: var(--card-hover);
+        font-weight: 400;
+        font-size: 18px
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        background: var(--card-hover);
+
+        li {
+          display: block;
+          position: relative;
+          margin: 0;
+          width: 100%;
+          border-top: 1px solid var(--color-1000);
+          padding: 11px 0 12px 45px;
+          line-height: 18px;
+          font-size: 14px;
+          order: 1;
+          transition: all .15s ease;
+
+          .star {
+            position: absolute;
+            display: block;
+            top: 50%;
+            right: 15px;
+            margin-top: -15px;
+            width: 30px;
+            height: 30px;
+            color: #282f30;
+            transition: color .15s;
+            min-width: auto;
+            background: transparent;
+            color: #8a9ea1;
+
+            svg {
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              margin: auto;
+              width: 18px;
+              height: 19px;
+              fill: currentColor
+            }
+
+            &:hover {
+              color: #3F494B
+            }
+          }
+
+          &.fav {
+            order: 0;
+
+            .star {
+              color: #008C9E;
+
+              &:hover {
+                color: #00BCD4
+              }
+            }
+          }
+
+          &:before {
+            content: '';
+            position: absolute;
+            display: block;
+            top: 50%;
+            left: 20px;
+            margin-top: -5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: white
+          }
+
+          &.good:before {
+            background: #3bb447
+          }
+
+          &.medium:before {
+            background: #b2b43b
+          }
+
+          &.bad:before {
+            background: #b43b3b
+          }
+
+          &.coming-soon:before {
+            background: #3F494B
+          }
+        }
+      }
+    }
+
+  }
+
+}
+
+
+html[data-theme="dark"]{
+
+  .gep-game .search-game {
+    color: var(--color-500);
+    background: var(--color-200);
+
+    .search-input {
+      background: var(--color-black);
+
+      &::placeholder {
+        color: var(--color-500);
+      }
+    }
+  }
+  .gep-game .search-game:hover .search-input,
+  .gep-game .search-game .search-input:focus {
+    color: var(--color-900);
+  }
+  .gep-game .game-data h4,
+  .gep-game .game-data ul {
+    background: var(--color-200);
+  }
+  .gep-game .game-data li {
+    border-top-color: var(--color-black);
+  }
+}

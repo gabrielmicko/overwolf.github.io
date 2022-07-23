@@ -21,12 +21,12 @@
     <h1>App Submission Form</h1>
 
     <div class="inline-fields">
-      <div class="field inline">
+      <div class="field">
         <label for="submission-first-name">First Name</label>
         <input id="submission-first-name" maxlength="40" name="first_name" type="text" required />
       </div>
 
-      <div class="field inline">
+      <div class="field">
         <label for="submission-last-name">Last Name</label>
         <input id="submission-last-name" maxlength="80" name="last_name" type="text" required />
       </div>
@@ -34,7 +34,7 @@
 
     <div class="field">
       <label for="submission-email">
-        Email Address
+        Email used to register to Overwolf
         <div class="tip">
           <div class="content">
             Please make sure you are registered before submitting an app proposal.<br />
@@ -45,11 +45,20 @@
       <input id="submission-email" maxlength="80" name="email" type="email" required />
     </div>
 
-    <div class="field">
-      <label for="submission-url">
-        Website <small>(Optional)</small>
-      </label>
-      <input id="submission-url" maxlength="80" name="url" type="text" />
+    <div class="inline-fields">
+      <div class="field">
+        <label for="submission-app-name">
+          App name
+        </label>
+        <input id="submission-app-name" maxlength="255" name="00N5e00000Yv0tz" type="text" />
+      </div>
+
+      <div class="field">
+        <label for="submission-url">
+          Website <small>(Optional)</small>
+        </label>
+        <input id="submission-url" maxlength="80" name="url" type="text" />
+      </div>
     </div>
 
     <div class="field select">
@@ -101,8 +110,10 @@
     <div class="field checkbox small-text">
       <input id="submission-agree" name="00N5e00000Yv0uE" type="checkbox" value="1" required />
       <label for="submission-agree">
-        <small>I agree to the <a href="https://discord.gg/overwolf-developers" target="_blank">developer & app
-            terms</a></small>
+        <small>I agree to the <a href="/topics/legal/legal-developers-terms"
+            target="_blank">developer</a> & <a href="/topics/legal/legal-app-terms"
+            target="_blank">app</a>
+          terms</small>
       </label>
     </div>
 
